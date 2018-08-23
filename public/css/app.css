@@ -1,98 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Hind+Vadodara);.card {
-  height: 300px;
-  position: relative;
-  -webkit-box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
-          box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
-  border: none;
-  margin-bottom: 30px;
-}
-
-.card-01 .card-body {
-  position: relative;
-  padding: 10px 8px;
-}
-
-.card-01 .badge-box {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  margin-left: -50px;
-  text-align: center;
-}
-
-.card-01 .badge-box i {
-  background: #DFC717;
-  color: #fff;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  font-size: 10px;
-}
-
-.card-01.height-fix {
-  height: 455px;
-  overflow: hidden;
-}
-
-.card-01.height-fix .card-img-top {
-  width: auto !important;
-}
-
-.courses-card .col-lg-3 {
-  padding: 5px 5px;
-}
-
-.card-01 img {
-  height: 130px;
-  display: block;
-}
-
-.card-01 .card-title {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-top: 10px;
-  margin-bottom: 0px;
-}
-
-.card-01 hr {
-  margin: 0px 0px;
-}
-
-.card-01 .badge-cat {
-  position: absolute;
-  top: 5%;
-  left: 0;
-  z-index: 10;
-  font-size: 10px;
-}
-
-.card-01 .card-foot {
-  padding: 0px 8px;
-  position: absolute;
-  width: 100%;
-  display: block;
-  left: 0;
-  bottom: 3%;
-}
-
-.card-01 .card-text {
-  margin: 2px 0px;
-  padding: 2px 0px;
-  line-height: 1.1;
-  font-size: 13px;
-  color: #889ca5;
-}
-
-.m-top {
-  margin-top: 100px;
-}
-
-/*!
+@import url(https://fonts.googleapis.com/css?family=Nunito);/*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -10614,6 +10520,16 @@ header .navbar-laravel .navbar-brand {
 
 .btn-facebook:hover {
   background-color: #3881C4;
+  color: #fff;
+}
+
+.btn-google {
+  background-color: #DD4B39;
+  color: #fff;
+}
+
+.btn-google:hover {
+  background-color: #c23321;
   color: #fff;
 }
 

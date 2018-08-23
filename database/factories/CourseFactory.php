@@ -3,7 +3,7 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Course::class, function (Faker $faker) {
-    $name = $faker->sentence(6);
+    $name = $faker->sentence;
     $status = $faker->randomElement([\App\Course::PUBLISHED,\App\Course::PENDING,\App\Course::REJECTED]);
     return [
         'teacher_id'=> \App\Teacher::all()->random()->id,

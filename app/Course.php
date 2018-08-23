@@ -50,17 +50,6 @@ class Course extends Model
     const PENDING=2;
     const REJECTED=3;
 
-    protected $withCount = ['reviews','students'];
-
-    public function pathAttachment()
-    {
-        return "/images/courses/".$this->picture;
-    }
-
-    public function getRouteKeyName(){
-        return 'slug';
-    }
-
     public function category(){
         return $this->belongsTo(Category::class)->select('id','name');
     }
@@ -87,25 +76,5 @@ class Course extends Model
 
     public function teacher(){
         return $this->belongsTo(Teacher::class);
-    }
-
-    /* Esta funcion se ejecuta sola en el rating,
-     porque el nombrede la funcion esta empezando con get y terminando
-    con Attribute.. Si cambiamos el nombre por uno que no tenga estas
-    condiciones tendriamos que llamarlo con camel case en la vista
-    y con guin bajo "_" pero es obligatorio que tenga get al inicio
-    Ej: getCustomRatingAttribute partse get+ nombre del campo + Attribute*/
-    public function getCustomRatingAttribute()
-    {
-        return $this->reviews->avg('rating');
-    }
-
-
-    public function relatedCourses(){
-        return Course::with('reviews')->whereCategoryId($this->category->id)
-            ->where('id', '!=', $this->id)
-            ->latest()
-            ->limit(6)
-            ->get();
     }
 }

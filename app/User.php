@@ -64,7 +64,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password',
-    ];    
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -74,11 +74,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public static function navigation()
-    {
-        return auth()->check() ? auth()->user()->role->name : 'guest';
-    }
 
     public function role(){
         return $this->belongsTo(Role::class);

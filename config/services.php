@@ -47,4 +47,10 @@ return [
         'redirect' => '/login/facebook/callback',
     ],
 
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => '/login/google/callback',
+    ],  
+
 ];

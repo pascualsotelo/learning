@@ -1,13 +1,10 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Hind+Vadodara');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
 @import 'variables';
-@import 'card';
-.m-top{
-  margin-top: 100px;
-}
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -56,6 +53,15 @@ header .navbar-laravel {
 
 .btn-facebook:hover {
   background-color: #3881C4;
+  color: #fff;
+}
+.btn-google {
+  background-color: #DD4B39;
+  color: #fff;
+}
+
+.btn-google:hover {
+  background-color: #c23321;
   color: #fff;
 }
 
