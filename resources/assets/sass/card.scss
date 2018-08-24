@@ -1,4 +1,5 @@
-.card{height: 300px; position: relative; box-shadow:2px 2px 20px rgba(0,0,0,0.3); border:none; margin-bottom:30px;}
+.card{height: 300px; position: relative; box-shadow:2px 2px 20px
+    rgba(0,0,0,0.3); border:none; margin-bottom:30px;}
 .card-01 .card-body{position:relative; padding:10px 8px;}
 .card-01 .badge-box{position:absolute; top:-10px; left:50%; width:100px; height:100px;margin-left:-50px; text-align:center;}
 .card-01 .badge-box i{background:#DFC717; color:#fff; border-radius:50%;  width:20px; height:20px; line-height:20px; text-align:center; font-size:10px;}
@@ -44,4 +45,11 @@
     line-height: 1.1;
     font-size: 13px;
     color: #889ca5;
+}
+
+
+// card detail
+.detail-goals .card{
+    height: auto;
+    min-height: 0;
 }

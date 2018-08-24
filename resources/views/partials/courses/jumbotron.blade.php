@@ -7,15 +7,17 @@
                 </div>
 
                 <div class="col-5 text-left">
-                    <h1>{{ _("Curso") }}: {{$course->name}}</h1>
-                    <h4>{{ _("Profesor") }}: {{$course->teacher->user->name}}</h4>
-                    <h5>{{ _("Categoria") }}: {{$course->category->name}}</h5>
-                    <h5>{{ _("Fecha de publicación") }}: {{$course->created_at->format('d/m/Y')}}</h5>
-                    <h5>{{ _("Fecha de actualización") }}: {{$course->updated_at->format('d/m/Y')}}</h5>
-                    <h6>{{ _("Estudiantes inscritos") }}: {{$course->students_count}}</h6>
-                    <h6>{{ _("Número de valoraciones") }}: {{$course->reviews_count}}</h6>
+                    <h2>{{ __("Curso") }}: {{$course->name}}</h2>
+                    <h4>{{ __("Profesor") }}: {{$course->teacher->user->name}}</h4>
+                    <h5>{{ __("Categoria") }}: {{$course->category->name}}</h5>
+                    <h6>{{ __("Fecha de publicación") }}: {{$course->created_at->format('d/m/Y')}}</h6>
+                    <h6>{{ __("Fecha de actualización") }}: {{$course->updated_at->format('d/m/Y')}}</h6>
+                    <h6>{{ __("Estudiantes inscritos") }}: {{$course->students_count}}</h6>
+                    <h6>{{ __("Número de valoraciones") }}: {{$course->reviews_count}}</h6>
                     @include('partials.courses.rating')
                 </div>
+
+                @include('partials.courses.action_button')
             </div>
         </div>
 
