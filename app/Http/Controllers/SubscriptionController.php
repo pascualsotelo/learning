@@ -23,9 +23,10 @@ class SubscriptionController extends Controller
         return view('subscriptions.plans');
     }
 
-    public function processSubscription()
+    public function processSubscription(Request $request)
     {
         $token = request('stripeToken');
+       
         try {
             if (\request()->has('coupon')) {
                 \request()->user()->newSubscription('main', \request('type'))
@@ -37,6 +38,7 @@ class SubscriptionController extends Controller
             return redirect(route('subscriptions.admin'))
                 ->with('message', ['success', __("La suscripción se ha llevado a cabo correctamente")]);
         } catch (\Exception $exception) {
+            // dd($exception);
             $error = $exception->getMessage();
             return back()->with('message', ['danger', $error]);
         }

@@ -27,6 +27,7 @@
                                 "name" => __("Suscripción"),
                                 "description" => __("Mensual"),
                                 "type" => "monthly",
+                                "plan"=> "prod_DTjVH9FJWpJmCV",
                                 'amount'=> 13500.00
                             ]
                         ])
@@ -47,6 +48,7 @@
                                 'name' => 'Suscripción',
                                 'description' => 'Trimestral',
                                 'type' => 'quarterly',
+                                "plan"=> "prod_DTjXQnS0cGWG9v",
                                 'amount'=> 22000.00
                             ]
                         ])
@@ -67,6 +69,7 @@
                                 'name'=> __("Suscripción"),
                                 'description'=> __("Anual"),
                                 'type'=> ("yearly"),
+                                "plan"=> "prod_DTjZEarrfbTSe6",
                                 'amount'=> 186000.00
                             ]
                         ])
