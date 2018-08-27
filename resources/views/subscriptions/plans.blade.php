@@ -6,7 +6,7 @@
 @section('jumbotron')
     @include('partials.jumbotron',[
         'title'=> __("Subscribete ahora a uno de nuestros planes"),
-        'icon' => 'globe'       
+        'icon' => 'globe'
     ])
 @endsection
 
@@ -68,7 +68,7 @@
                             'product'=> [
                                 'name'=> __("Suscripción"),
                                 'description'=> __("Anual"),
-                                'type'=> ("yearly"),
+                                'type'=> 'yearly',
                                 "plan"=> "prod_DTjZEarrfbTSe6",
                                 'amount'=> 186000.00
                             ]

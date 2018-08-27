@@ -26,7 +26,7 @@ class SubscriptionController extends Controller
     public function processSubscription(Request $request)
     {
         $token = request('stripeToken');
-       
+
         try {
             if (\request()->has('coupon')) {
                 \request()->user()->newSubscription('main', \request('type'))
@@ -53,7 +53,7 @@ class SubscriptionController extends Controller
     public function resume()
     {
         $subscription = \request()->user()->subscription(\request('plan'));
-        if ($subscription->cancelled() && $subscription->onGracePeriod()) {            
+        if ($subscription->cancelled() && $subscription->onGracePeriod()) {
             \request()->user()->subscription(\request('plan'))->resume();
             return back()->with('message', ['success', __("Has reanudado tu suscripción correctamente")]);
         }
@@ -62,8 +62,12 @@ class SubscriptionController extends Controller
 
     public function cancel()
     {
-        dd(auth()->user()->subscription(\request('plan')));
-        
+        // dd(\request());
+        // modificar el metodo cancel() en el archivo subscription de cashier
+
+        auth()->user()->subscription(\request('plan'))->cancel();
         return back()->with('message', ['success', __("La suscripción se ha cancelado correctamente")]);
     }
+
+
 }
