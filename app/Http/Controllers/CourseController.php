@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Mail\NewStudentInCourse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,6 +31,27 @@ class CourseController extends Controller
         $related = $course->relatedCourses();
         // dd($related);
         return view('courses.detail', compact('course','related'));
+
+    }
+
+    public function inscribe(Course $course){
+
+        $course->students()->attach(auth()->user()->student->id);
+
+        \Mail::to($course->teacher->user)->send(new NewStudentInCourse($course, auth()->user()->name));
+
+        return back()->with('message', ['success', __("Inscrito correctamente al curso")]);
+    }
+
+    public function subscribed(){
+        $courses = Course::whereHas('students', function($q){
+            $q->where('user_id', auth()->id());
+        })->get();
+
+        return view('courses.subscribed', compact('courses'));
+    }
+
+    public function addReview(){
 
     }
 }

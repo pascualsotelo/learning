@@ -1,4 +1,4 @@
-<li><a class="nav-link" href="#">{{ __("my_cursos") }}</a></li>
+<li><a class="nav-link" href="{{ route('courses.subscribed') }}">{{ __("my_cursos") }}</a></li>
 <li class="nav-item dropdown">
     <a id="navbarDropdown"
        class="nav-link dropdown-toggle"
@@ -13,7 +13,7 @@
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="#">{{ __("perfil") }}</a>
         <a class="dropdown-item" href="#">{{ __("suscripciones") }}</a>
-        <a class="dropdown-item" href="#">{{ __("facturas") }}</a>
+        <a class="dropdown-item" href="{{ route('invoices.admin') }}">{{ __("facturas") }}</a>
         <a class="dropdown-item" href="{{ route('logout') }}"
            onclick="event.preventDefault();
            document.getElementById('logout-form').submit();"

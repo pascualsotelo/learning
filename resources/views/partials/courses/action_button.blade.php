@@ -7,7 +7,7 @@
                 </a>
             @else
                 @can('inscribe', $course)
-                    <a href="#" class="btn btn-course btn-block">
+                <a href="{{ route('courses.inscribe', ['slug' => $course->slug]) }}" class="btn btn-course btn-block">
                         <i class="fa fa-bolt"></i> {{ __("Inscribirme") }}
                     </a>
                 @else
