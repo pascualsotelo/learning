@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Review;
 use App\Mail\NewStudentInCourse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -53,5 +54,13 @@ class CourseController extends Controller
 
     public function addReview(){
 
+        Review::create([
+            'user_id' => auth()->id(),
+            'course_id' => request('course_id'),
+            'rating' => (int) request('rating_input'),
+            'comment' => request('message')
+        ]);
+
+        return back()->with('message', ['success', __("Muchas gracias por valora este curso")]);
     }
 }

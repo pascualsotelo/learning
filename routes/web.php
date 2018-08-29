@@ -19,7 +19,7 @@ Route::group(['prefix' => 'courses'], function(){
             ->name('courses.subscribed');
         Route::get('/{course}/inscribe', 'CourseController@inscribe')
             ->name('courses.inscribe');
-        Route::get('/add_review', 'CourseController@addReview')
+        Route::post('/add_review', 'CourseController@addReview')
         ->name('courses.add_review');
     });
     Route::get('/{course}', 'CourseController@show')->name('courses.detail');

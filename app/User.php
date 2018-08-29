@@ -67,6 +67,11 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    public function pathAttachment()
+    {
+        return "/images/users/".$this->picture;
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

@@ -10,7 +10,7 @@
         <hr/>
         <div class="row justify-content-center">
             {{-- Añadir parcial para mostrar el rating --}}
-            @include('partials.courses.rating')
+            @include('partials.courses.rating', ['rating' => $course->custom_rating])
         </div>
         {{--Elegir la opcion para terminar la descripcion--}}
          {{-- <p class="card-text">{{str_limit($course->description, 100, 'leer más' ) }}</p>  --}}

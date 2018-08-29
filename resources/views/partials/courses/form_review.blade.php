@@ -10,11 +10,11 @@
                 <div class="form-group">
                     <div class="col-12">
                         <ul id="list_rating" class="list-inline" style="font-size:40px;">
-                            <li class="list-inline-item"><i class="fa fa-star yellow"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item star" data-number="1"><i class="fa fa-star yellow"></i></li>
+                            <li class="list-inline-item star" data-number="2"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item star" data-number="3"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item star" data-number="4"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item star" data-number="5"><i class="fa fa-star"></i></li>
                         </ul>
                     </div>
                 </div>
@@ -38,12 +38,19 @@
 @endcannot
 
 @push('scripts')
-    <script>
-        jQuery(document).ready(function(){
+<script>
+    jQuery(document).ready(function() {
             const ratingSelector = jQuery('#list_rating');
-            ratingSelector.find('li').on('click', function(){
-                console.log(this);
-            });
+            ratingSelector.find('li').on('click', function () {
+                const number = $(this).data('number');
+                $("#rating_form").find('input[name=rating_input]').val(number);
+                ratingSelector.find('li i').removeClass('yellow').each(function(index) {
+                    if ((index + 1) <= number) {
+                        $(this).addClass('yellow');
+                    }
+                })
+            })
         });
-    </script>
+</script>
+
 @endpush
