@@ -13,7 +13,7 @@
     </a>
 
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">{{ __("perfil") }}</a>
+        <a class="dropdown-item" href="{{ route('profile.index') }}">{{ __("perfil") }}</a>
         <a class="dropdown-item" href="#">{{ __("suscripciones") }}</a>
         <a class="dropdown-item" href="{{ route('invoices.admin') }}">{{ __("facturas") }}</a>
         <a class="dropdown-item" href="{{ route('logout') }}"
