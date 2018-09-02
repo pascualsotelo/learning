@@ -21,7 +21,9 @@
                     </div>
                 </div>
             @empty
-                <div class="alert alert-dark"><i class="fa fa-info-circle"></i> {{ __("Sin valoraciones todavía") }}</div>
+                <div class="alert alert-dark" style="display:block; width:80%; margin:0 auto; text-align:center;">
+                    <i class="fa fa-info-circle"></i> {{ __("Sin valoraciones todavía") }}
+                </div>            
             @endforelse
         </div>
     </div>

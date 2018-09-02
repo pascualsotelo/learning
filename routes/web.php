@@ -21,6 +21,12 @@ Route::group(['prefix' => 'courses'], function(){
             ->name('courses.inscribe');
         Route::post('/add_review', 'CourseController@addReview')
         ->name('courses.add_review');
+
+        Route::group(['middleware' => [sprintf('role:%s', \App\Role::TEACHER)]], function(){
+            Route::resource('courses', 'CourseController');
+        });
+        
+        
     });
     Route::get('/{course}', 'CourseController@show')->name('courses.detail');
 });
@@ -45,13 +51,13 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/{invoice}/download', 'InvoiceController@download')->name('invoices.download');
     });
 
-    // Ruta para devolver la ruta para las imagenes del storage
-    Route::get('/images/{path}/{attachment}', function ($path, $attachment) {
-        $file = sprintf('storage/%s/%s', $path, $attachment);
-        if (File::exists($file)) {
-            return Image::make($file)->response();
-        }
-    });
+});
+// Ruta para devolver la ruta para las imagenes del storage
+Route::get('/images/{path}/{attachment}', function ($path, $attachment) {
+    $file = sprintf('storage/%s/%s', $path, $attachment);
+    if (File::exists($file)) {
+        return Image::make($file)->response();
+    }
 });
 
 Route::group(["prefix" => "profile", "middleware"=> ["auth"]], function(){

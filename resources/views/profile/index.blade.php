@@ -116,7 +116,7 @@
                         {{__("Acceso con Socialite")}}
                     </div>
                     <div class="card-body">
-                        <button class="btn-btn-outline-dark btn-block">
+                        <button class="btn btn-outline-dark btn-block">
                             {{__("Registrado con")}}: <i class="fa fa-{{$user->socialAccount->provider}}"></i>
                             {{$user->socialAccount->provider}}
                         </button>

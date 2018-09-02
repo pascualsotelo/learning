@@ -1,6 +1,6 @@
 <li><a class="nav-link" href="{{ route('courses.subscribed') }}">{{ __("my_cursos") }}</a></li>
-<li><a class="nav-link" href="#">{{ __("dev_cursos") }}</a></li>
-<li><a class="nav-link" href="#">{{ __("crear_curso") }}</a></li>
+<li><a class="nav-link" href="{{ route('teacher.courses') }}">{{ __("dev_cursos") }}</a></li>
+<li><a class="nav-link" href="{{ route('courses.create') }}">{{ __("crear_curso") }}</a></li>
 <li class="nav-item dropdown">
     <a id="navbarDropdown"
        class="nav-link dropdown-toggle"
