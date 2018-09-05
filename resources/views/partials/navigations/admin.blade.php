@@ -1,4 +1,4 @@
-<li><a class="nav-link" href="#">{{ __("cursos") }}</a></li>
+<li><a class="nav-link" href="{{route('admin.courses')}}">{{ __("cursos") }}</a></li>
 <li><a class="nav-link" href="#">{{ __("estudiantes") }}</a></li>
 <li><a class="nav-link" href="#">{{ __("profesores") }}</a></li>
 <li class="nav-item dropdown">
