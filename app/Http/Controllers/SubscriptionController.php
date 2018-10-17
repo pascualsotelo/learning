@@ -64,6 +64,7 @@ class SubscriptionController extends Controller
     {
         // dd(\request());
         // modificar el metodo cancel() en el archivo subscription de cashier
+        // ruta del archivo vendor/laravel/cashier/src/Subscription.php
 
         auth()->user()->subscription(\request('plan'))->cancel();
         return back()->with('message', ['success', __("La suscripción se ha cancelado correctamente")]);
